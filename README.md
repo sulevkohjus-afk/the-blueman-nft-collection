@@ -1,14 +1,8 @@
-# BlueMan NFT — premium motion demo
+# BlueMan NFT — cinematic splash demo
 
-Separate preview based on the approved `index(3).html`. The approved original is unchanged.
+Separate preview based on the approved premium version. The live version is unchanged.
 
-Demo additions:
-
-- slow independent card floating
-- a restrained light sweep on card hover
-- soft reflections beneath the cards
-- a subtle light sweep on the primary CTA
-- existing click-to-flip behavior retained
+This version uses a restrained cinematic rain impact: a wide water crown, one slow luminous ripple and only a few larger droplets.
 
 Static, responsive homepage prepared for deployment on Vercel.
 

@@ -613,12 +613,12 @@ if (canvas && !reducedMotion) {
     canvas.width = Math.max(1, Math.floor(box.width * dpr));
     canvas.height = Math.max(1, Math.floor(box.height * dpr));
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    streams = Array.from({length: Math.ceil(box.width / 82)}, (_, index) => ({
-      x:index * 82 + Math.random() * 14,
+    streams = Array.from({length: Math.ceil(box.width / 58)}, (_, index) => ({
+      x:index * 58 + Math.random() * 12,
       y:Math.random() * -box.height,
-      speed:.75 + Math.random() * 1.05,
+      speed:.58 + Math.random() * .72,
       length:2 + Math.floor(Math.random() * 4),
-      alpha:.38 + Math.random() * .42
+      alpha:.48 + Math.random() * .42
     }));
   };
   const drawRain = () => {
@@ -636,7 +636,7 @@ if (canvas && !reducedMotion) {
       stream.y += stream.speed;
       if(stream.y - stream.length * 126 > box.height){
         stream.y = -Math.random() * box.height * .65;
-        stream.speed = .75 + Math.random() * 1.05;
+        stream.speed = .58 + Math.random() * .72;
       }
     });
     rainFrame = requestAnimationFrame(drawRain);
@@ -653,44 +653,131 @@ const waterCanvas = document.querySelector('.hero-water-canvas');
 if(waterCanvas && !reducedMotion){
   const water = waterCanvas.getContext('2d');
   let drops = [];
+  let ripples = [];
+  let crowns = [];
+  let words = [];
   let waterFrame = 0;
+  const makeDrop = (box, fresh=false) => ({
+    x:box.width*(.12+Math.random()*.84),
+    y:box.height*(.78+Math.random()*.14),
+    vx:(Math.random()-.5)*.72,
+    vy:-(.72+Math.random()*1.35),
+    gravity:.014+Math.random()*.011,
+    r:.8+Math.random()*1.55,
+    life:fresh?0:Math.random()*.72,
+    maxLife:.72+Math.random()*.42,
+    burst:false
+  });
+  const addImpact = (box) => {
+    const x=box.width*(.12+Math.random()*.84);
+    const y=box.height*(.82+Math.random()*.1);
+    ripples.push({x,y,size:10,life:0,max:72+Math.random()*42});
+    const crownPeaks=7+Math.floor(Math.random()*4);
+    crowns.push({x,y,life:0,width:42+Math.random()*36,height:9+Math.random()*6,peaks:crownPeaks,profile:Array.from({length:crownPeaks+1},()=>.55+Math.random()*.45)});
+    const amount=3+Math.floor(Math.random()*4);
+    for(let i=0;i<amount;i+=1){
+      const drop=makeDrop(box,true);
+      drop.x=x+(Math.random()-.5)*8;
+      drop.y=y;
+      drop.burst=true;
+      drops.push(drop);
+    }
+    if(Math.random()<.14){
+      words.push({x,y:y-2,vx:(Math.random()-.5)*.12,vy:-(.2+Math.random()*.18),life:0,alpha:.28+Math.random()*.16,size:8+Math.random()*1.5});
+    }
+  };
   const resizeWater = () => {
     const box = waterCanvas.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1,2);
     waterCanvas.width = Math.max(1,Math.floor(box.width*dpr));
     waterCanvas.height = Math.max(1,Math.floor(box.height*dpr));
     water.setTransform(dpr,0,0,dpr,0,0);
-    drops = Array.from({length:32},()=>({
-      x:box.width*(.15+Math.random()*.82),
-      y:box.height*(.64+Math.random()*.28),
-      vx:(Math.random()-.5)*.18,
-      vy:-(.18+Math.random()*.42),
-      r:.45+Math.random()*1.25,
-      life:Math.random()
-    }));
+    drops = Array.from({length:18},()=>makeDrop(box));
+    ripples=[];
+    crowns=[];
+    words=[];
   };
+  let impactClock=0;
   const drawWater = () => {
     const box = waterCanvas.getBoundingClientRect();
     water.clearRect(0,0,box.width,box.height);
     const glow = water.createLinearGradient(0,box.height*.65,0,box.height);
     glow.addColorStop(0,'rgba(45,223,241,0)');
-    glow.addColorStop(.72,'rgba(44,218,235,.12)');
-    glow.addColorStop(1,'rgba(103,242,255,.24)');
+    glow.addColorStop(.62,'rgba(44,218,235,.14)');
+    glow.addColorStop(1,'rgba(103,242,255,.34)');
     water.fillStyle=glow;
     water.fillRect(0,box.height*.55,box.width,box.height*.45);
+    impactClock+=1;
+    if(impactClock>48+Math.random()*28){addImpact(box);impactClock=0}
     drops.forEach((drop)=>{
-      drop.x+=drop.vx; drop.y+=drop.vy; drop.vy+=.0025; drop.life+=.003;
-      if(drop.life>1 || drop.y<box.height*.38){
-        drop.x=box.width*(.15+Math.random()*.82);
-        drop.y=box.height*(.78+Math.random()*.16);
-        drop.vx=(Math.random()-.5)*.18;
-        drop.vy=-(.18+Math.random()*.42);
-        drop.life=0;
+      drop.x+=drop.vx; drop.y+=drop.vy; drop.vy+=drop.gravity; drop.life+=.0065;
+      if(drop.life>drop.maxLife || drop.y>box.height*.96){
+        if(!drop.burst) Object.assign(drop,makeDrop(box,true));
       }
+      const alpha=Math.max(0,.76-drop.life/drop.maxLife*.68);
+      water.shadowBlur=8;
+      water.shadowColor='rgba(80,238,255,.6)';
       water.beginPath();
       water.arc(drop.x,drop.y,drop.r,0,Math.PI*2);
-      water.fillStyle=`rgba(104,240,255,${Math.max(0,.38-drop.life*.3)})`;
+      water.fillStyle=`rgba(126,246,255,${alpha})`;
       water.fill();
+    });
+    drops=drops.filter((drop)=>!drop.burst || drop.life<=drop.maxLife);
+    water.shadowBlur=0;
+    ripples=ripples.filter((ripple)=>ripple.life<1);
+    ripples.forEach((ripple)=>{
+      ripple.life+=.014;
+      ripple.size+=.72;
+      const alpha=(1-ripple.life)*.46;
+      water.beginPath();
+      water.ellipse(ripple.x,ripple.y,ripple.size,ripple.size*.17,0,0,Math.PI*2);
+      water.strokeStyle=`rgba(100,244,255,${alpha})`;
+      water.lineWidth=1.2+(1-ripple.life)*1.8;
+      water.shadowBlur=11;
+      water.shadowColor='rgba(35,220,246,.58)';
+      water.stroke();
+    });
+    crowns=crowns.filter((crown)=>crown.life<1);
+    crowns.forEach((crown)=>{
+      crown.life+=.018;
+      const open=Math.sin(Math.min(1,crown.life*1.7)*Math.PI*.5);
+      const fade=Math.pow(1-crown.life,1.35);
+      water.save();
+      water.translate(crown.x,crown.y);
+      water.scale(1,.42);
+      water.beginPath();
+      water.moveTo(-crown.width*open,0);
+      for(let i=0;i<=crown.peaks;i+=1){
+        const t=i/crown.peaks;
+        const px=(-crown.width+crown.width*2*t)*open;
+        const peak=i%2===0?-(crown.height*crown.profile[i]*fade):0;
+        water.lineTo(px,peak);
+      }
+      water.lineTo(crown.width*open,0);
+      water.strokeStyle=`rgba(145,250,255,${fade*.7})`;
+      water.lineWidth=1.3+fade*1.5;
+      water.shadowBlur=18;
+      water.shadowColor='rgba(44,224,245,.82)';
+      water.stroke();
+      water.restore();
+    });
+    water.shadowBlur=0;
+    words=words.filter((word)=>word.life<1);
+    words.forEach((word)=>{
+      word.life+=.005;
+      word.x+=word.vx;
+      word.y+=word.vy;
+      word.vy+=.0022;
+      water.save();
+      water.translate(word.x,word.y);
+      water.rotate((word.vx*word.life)*.6);
+      water.font=`600 ${word.size}px ui-monospace,SFMono-Regular,Menlo,monospace`;
+      water.textAlign='center';
+      water.fillStyle=`rgba(83,233,247,${Math.max(0,word.alpha*(1-word.life))})`;
+      water.shadowBlur=7;
+      water.shadowColor='rgba(31,218,242,.62)';
+      water.fillText('BLUEMAN',0,0);
+      water.restore();
     });
     waterFrame=requestAnimationFrame(drawWater);
   };
@@ -704,7 +791,7 @@ if(waterCanvas && !reducedMotion){
 </script>
 <style>
 /* Individual card motion — built on the approved V3 header. */
-#blueman-exact-hero .raincode-canvas{z-index:4!important;opacity:.58!important}
+#blueman-exact-hero .raincode-canvas{z-index:4!important;opacity:.72!important}
 #blueman-exact-hero .be-art{
   z-index:5;
   background-image:none!important;
