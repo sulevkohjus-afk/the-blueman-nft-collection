@@ -13,3 +13,4 @@ Import this folder as a new Vercel project. No framework preset or build command
 - Animated raincode hero background
 - Smooth section navigation and restrained scroll reveals
 - Reduced-motion accessibility support
+Deployment managed through GitHub and Vercel.
