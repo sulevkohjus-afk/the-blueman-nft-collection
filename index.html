@@ -2701,5 +2701,176 @@ if(waterCanvas && !reducedMotion){
     #blueman-complete-page .purpose-art{box-sizing:border-box!important}
   }
 </style>
+<style id="responsive-rebuild-mobile-v2">
+/* Final responsive layer: explicit component layouts, not proportional shrinking. */
+@media (max-width:760px) {
+  html,body{width:100%!important;max-width:100%!important;overflow-x:hidden!important}
+  #blueman-complete-page,
+  #blueman-complete-page *{box-sizing:border-box}
+  #blueman-complete-page{width:100%!important;max-width:100%!important;overflow-x:clip!important}
+  #blueman-complete-page img,
+  #blueman-complete-page svg,
+  #blueman-complete-page canvas{display:block;max-width:100%!important}
+  #blueman-complete-page .bp-section{width:100%!important;min-height:0!important;overflow:hidden!important}
+  #blueman-complete-page .bp-inner{
+    width:100%!important;max-width:100%!important;
+    padding:62px 18px!important;margin:0!important;
+  }
+  #blueman-complete-page .bp-grid,
+  #blueman-complete-page .thanks .bp-inner,
+  #blueman-complete-page .identity .top,
+  #blueman-complete-page .identity .numbers,
+  #blueman-complete-page .ip-head,
+  #blueman-complete-page .ip-bottom,
+  #blueman-complete-page .story-head,
+  #blueman-complete-page .final-grid,
+  #blueman-complete-page .premium-use-grid,
+  #blueman-complete-page .purpose-six .purpose-list,
+  #blueman-complete-page .why-grid{
+    display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;max-width:100%!important;gap:28px!important;
+  }
+  #blueman-complete-page .bp-title,
+  #blueman-complete-page .identity .bp-title,
+  #blueman-complete-page .ip .bp-title,
+  #blueman-complete-page .story .bp-title,
+  #blueman-complete-page .purpose-six-head .bp-title,
+  #blueman-complete-page .final .bp-title{
+    width:100%!important;max-width:100%!important;
+    font-size:clamp(38px,10.7vw,48px)!important;
+    line-height:.96!important;letter-spacing:-.05em!important;
+    overflow-wrap:break-word!important;word-break:normal!important;
+  }
+  #blueman-complete-page .bp-kicker{font-size:8.5px!important;letter-spacing:.2em!important;margin-bottom:17px!important}
+  #blueman-complete-page .bp-copy,
+  #blueman-complete-page .bp-copy p,
+  #blueman-complete-page .ip-lead,
+  #blueman-complete-page .ip-intro,
+  #blueman-complete-page .identity-statement,
+  #blueman-complete-page .story-copy p,
+  #blueman-complete-page .purpose-copy,
+  #blueman-complete-page .purpose-statement,
+  #blueman-complete-page .final .bp-copy{
+    width:100%!important;max-width:100%!important;
+    font-size:15px!important;line-height:1.68!important;
+  }
+
+  /* Hero */
+  #blueman-exact-hero{width:100%!important;min-height:0!important;overflow:hidden!important;padding-bottom:22px!important}
+  #blueman-exact-hero .be-nav{left:18px!important;right:18px!important;top:24px!important;width:auto!important}
+  #blueman-exact-hero .be-links,#blueman-exact-hero .be-corner{display:none!important}
+  #blueman-exact-hero .be-copy{position:relative!important;inset:auto!important;width:100%!important;max-width:100%!important;padding:90px 18px 0!important}
+  #blueman-exact-hero h1{max-width:100%!important;font-size:clamp(43px,12.1vw,54px)!important;line-height:.93!important;letter-spacing:-.055em!important}
+  #blueman-exact-hero .be-sub{max-width:100%!important;margin:18px 0 15px!important;font-size:15px!important}
+  #blueman-exact-hero .be-list{width:100%!important;max-width:100%!important;gap:8px!important}
+  #blueman-exact-hero .be-list li{grid-template-columns:16px minmax(0,1fr)!important;font-size:12px!important;line-height:1.42!important}
+  #blueman-exact-hero .be-message{margin:17px 0!important;font-size:13px!important}
+  #blueman-exact-hero .be-actions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important;width:100%!important}
+  #blueman-exact-hero .be-actions a{width:100%!important;min-width:0!important;min-height:42px!important;padding:0 9px!important;justify-content:center!important;font-size:9px!important}
+  #blueman-exact-hero .be-art{position:relative!important;inset:auto!important;width:calc(100% - 24px)!important;max-width:430px!important;height:255px!important;margin:22px auto 0!important;background-size:auto 100%!important;background-position:center bottom!important;overflow:hidden!important}
+  #blueman-exact-hero .be-wordmark{font-size:34vw!important;left:0!important;right:auto!important;bottom:22px!important;max-width:100%!important;overflow:hidden!important}
+
+  /* Images: each has a real mobile width and cannot escape its column. */
+  #blueman-complete-page .thanks .visual,
+  #blueman-complete-page .identity .top>div:last-child>.bp-art,
+  #blueman-complete-page .ip-bottom .bp-art,
+  #blueman-complete-page .final-grid .bp-art{
+    width:min(76vw,285px)!important;max-width:100%!important;height:auto!important;
+    margin:28px auto 0!important;transform:none!important;
+  }
+  #blueman-complete-page .purpose-six .purpose-art,
+  #blueman-complete-page .why-visual{
+    width:min(68vw,255px)!important;max-width:100%!important;height:auto!important;
+    margin:34px auto 42px!important;transform:rotate(-1.5deg)!important;
+  }
+  #blueman-complete-page .story-gallery{
+    display:grid!important;grid-template-columns:1fr!important;
+    width:100%!important;max-width:260px!important;gap:22px!important;
+    margin:0 auto 48px!important;padding:0!important;overflow:hidden!important;
+  }
+  #blueman-complete-page .story-print,
+  #blueman-complete-page .story-print:last-child{
+    width:240px!important;height:240px!important;max-width:100%!important;
+    margin:0 auto!important;transform:none!important;
+  }
+
+  /* NFT collection: three contained cards, no clipped fourth card. */
+  #blueman-complete-page .identity .nft-story{width:100%!important;margin-top:44px!important;overflow:hidden!important}
+  #blueman-complete-page .identity .nft-row{
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    width:100%!important;max-width:350px!important;min-height:0!important;
+    gap:7px!important;margin:25px auto 38px!important;padding:9px 5px!important;
+    overflow:hidden!important;
+  }
+  #blueman-complete-page .identity .nft-card,
+  #blueman-complete-page .identity .nft-card:nth-child(2),
+  #blueman-complete-page .identity .nft-card:nth-child(3){
+    width:100%!important;min-width:0!important;max-width:none!important;height:auto!important;
+    aspect-ratio:1/1!important;margin:0!important;transform:none!important;
+  }
+  #blueman-complete-page .identity .nft-card:nth-child(n+4){display:none!important}
+  #blueman-complete-page .identity .nft-card img{width:100%!important;height:100%!important;object-fit:cover!important}
+  #blueman-complete-page .identity .community-stat strong{font-size:clamp(48px,15vw,62px)!important}
+  #blueman-complete-page .identity .big-number{font-size:clamp(58px,18vw,74px)!important}
+  #blueman-complete-page .identity .numbers{margin-top:0!important;padding-top:42px!important}
+
+  /* Cards and accordions */
+  #blueman-complete-page .shift-box,
+  #blueman-complete-page .premium-use,
+  #blueman-complete-page .use-item,
+  #blueman-complete-page .why-card,
+  #blueman-complete-page .ip-details,
+  #blueman-complete-page .story-accordion,
+  #blueman-complete-page .purpose-item{
+    width:100%!important;max-width:100%!important;min-width:0!important;min-height:0!important;
+    padding:20px 18px!important;border-radius:10px!important;
+  }
+  #blueman-complete-page details>summary{width:100%!important;max-width:100%!important;min-width:0!important}
+  #blueman-complete-page .premium-use-grid,
+  #blueman-complete-page .purpose-six .purpose-list,
+  #blueman-complete-page .why-grid{margin-top:30px!important}
+  #blueman-complete-page .premium-use h3{margin-top:20px!important;font-size:18px!important}
+  #blueman-complete-page .ip-question{display:grid!important;grid-template-columns:1fr!important;gap:18px!important;margin:42px 0!important;padding:26px 0!important}
+  #blueman-complete-page .ip-question blockquote{font-size:clamp(23px,6.7vw,29px)!important}
+  #blueman-complete-page .question-arrow{transform:rotate(90deg)!important}
+  #blueman-complete-page .story-head>div:last-child{padding-left:0!important}
+  #blueman-complete-page .story-roadmap{margin-top:40px!important}
+  #blueman-complete-page .purpose-six .purpose-item summary{padding:0!important;min-height:64px!important}
+  #blueman-complete-page .purpose-six .purpose-body{padding:18px 0 4px!important}
+
+  /* Final section and footer */
+  #blueman-complete-page .final-equation{font-size:19px!important;margin:23px 0!important;padding:16px!important}
+  #blueman-complete-page .final-matters{font-size:23px!important;margin-top:24px!important}
+  #blueman-complete-page .bp-foot{width:100%!important;margin-top:48px!important;padding:24px 0 0!important;display:grid!important;grid-template-columns:1fr!important;gap:20px!important}
+  #blueman-complete-page .bp-foot-left,
+  #blueman-complete-page .bp-foot-right{width:100%!important;max-width:100%!important;display:flex!important;flex-wrap:wrap!important;justify-content:flex-start!important;gap:12px!important}
+  #blueman-complete-page .bp-divider{height:28px!important}
+  #blueman-complete-page .bp-foot .bp-signature-image,
+  #blueman-complete-page .bp-foot .bp-signature-image img{width:94px!important;height:34px!important;flex-basis:94px!important}
+  #blueman-complete-page .zero-icon{width:24px!important;height:24px!important;max-width:24px!important}
+}
+
+@media (max-width:360px) {
+  #blueman-complete-page .bp-inner{padding-left:15px!important;padding-right:15px!important}
+  #blueman-exact-hero .be-copy{padding-left:15px!important;padding-right:15px!important}
+  #blueman-exact-hero .be-actions{grid-template-columns:1fr!important}
+  #blueman-complete-page .identity .nft-row{gap:5px!important;padding-inline:2px!important}
+}
+
+@media (min-width:761px) and (max-width:1024px) {
+  #blueman-complete-page .bp-inner{padding:78px 34px!important}
+  #blueman-complete-page .bp-title,
+  #blueman-complete-page .identity .bp-title,
+  #blueman-complete-page .ip .bp-title,
+  #blueman-complete-page .story .bp-title,
+  #blueman-complete-page .purpose-six-head .bp-title,
+  #blueman-complete-page .final .bp-title{font-size:clamp(46px,6.7vw,62px)!important}
+  #blueman-complete-page .premium-use-grid,
+  #blueman-complete-page .purpose-six .purpose-list{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+  #blueman-complete-page .identity .nft-row{width:100%!important;max-width:650px!important;overflow:hidden!important}
+  #blueman-complete-page .identity .nft-card{max-width:190px!important}
+  #blueman-exact-hero .be-art{height:390px!important;max-width:760px!important;margin-inline:auto!important;overflow:hidden!important}
+}
+</style>
 </body>
 </html>
