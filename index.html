@@ -2314,5 +2314,392 @@ if(waterCanvas && !reducedMotion){
     }
   }
 </style>
+<style id="mobile-layout-final-v1">
+  @media(max-width:760px){
+    /* A single mobile rhythm overrides the accumulated earlier experiments. */
+    #blueman-complete-page{overflow:hidden}
+    #blueman-complete-page .bp-inner{
+      width:100%!important;
+      max-width:none!important;
+      box-sizing:border-box!important;
+      padding:78px 22px!important;
+    }
+    #blueman-complete-page .bp-section{min-height:0!important}
+    #blueman-complete-page .bp-kicker{
+      margin-bottom:22px!important;
+      gap:11px!important;
+      font-size:9px!important;
+      line-height:1.45!important;
+      letter-spacing:.24em!important;
+    }
+    #blueman-complete-page .bp-title,
+    #blueman-complete-page .identity .bp-title,
+    #blueman-complete-page .ip .bp-title,
+    #blueman-complete-page .story .bp-title,
+    #blueman-complete-page .purpose-six-head .bp-title{
+      max-width:100%!important;
+      font-size:clamp(42px,11.6vw,54px)!important;
+      line-height:.94!important;
+      letter-spacing:-.055em!important;
+      overflow-wrap:normal!important;
+      word-break:normal!important;
+    }
+    #blueman-complete-page .final .bp-title{
+      font-size:clamp(44px,12vw,58px)!important;
+      line-height:.93!important;
+    }
+    #blueman-complete-page .bp-copy,
+    #blueman-complete-page .bp-copy p,
+    #blueman-complete-page .identity .shift-box .bp-copy,
+    #blueman-complete-page .identity .numbers>.bp-copy,
+    #blueman-complete-page .identity .collection-story p,
+    #blueman-complete-page .ip-lead,
+    #blueman-complete-page .ip-intro,
+    #blueman-complete-page .premium-use p,
+    #blueman-complete-page .ip-editorial p,
+    #blueman-complete-page .story-copy p,
+    #blueman-complete-page .purpose-statement,
+    #blueman-complete-page .purpose-copy,
+    #blueman-complete-page .final .bp-copy{
+      max-width:100%!important;
+      font-size:15.5px!important;
+      line-height:1.72!important;
+    }
+
+    /* Hero: readable without making the opening screen feel crowded. */
+    #blueman-exact-hero{min-height:0!important;padding-bottom:18px}
+    #blueman-exact-hero .be-nav{left:22px!important;right:22px!important;top:30px!important}
+    #blueman-exact-hero .be-logo{font-size:17px!important}
+    #blueman-exact-hero .be-copy{padding:106px 22px 0!important}
+    #blueman-exact-hero .be-kicker{margin-bottom:18px!important;font-size:8px!important;line-height:1.45!important;letter-spacing:.25em!important}
+    #blueman-exact-hero h1{font-size:clamp(48px,13.3vw,58px)!important;line-height:.91!important;letter-spacing:-.065em!important}
+    #blueman-exact-hero .be-sub{margin:20px 0 18px!important;max-width:100%!important;font-size:15.5px!important;line-height:1.35!important}
+    #blueman-exact-hero .be-list{gap:9px!important}
+    #blueman-exact-hero .be-list li{grid-template-columns:18px 1fr!important;gap:8px!important;font-size:12.5px!important;line-height:1.42!important}
+    #blueman-exact-hero .be-message{margin:20px 0!important;font-size:14px!important;line-height:1.45!important}
+    #blueman-exact-hero .be-actions{gap:10px!important;flex-wrap:wrap!important}
+    #blueman-exact-hero .be-actions a{min-height:43px!important;padding:0 18px!important;font-size:10px!important}
+    #blueman-exact-hero .be-art{height:315px!important;margin:24px 12px 12px!important;background-size:auto 100%!important;background-position:center bottom!important}
+    #blueman-exact-hero .be-foot{display:none!important}
+
+    /* Sections 2–7: consistent spacing and no clipped compositions. */
+    #blueman-complete-page .thanks .bp-inner,
+    #blueman-complete-page .identity .bp-inner,
+    #blueman-complete-page .final .bp-inner{padding-top:82px!important;padding-bottom:82px!important}
+    #blueman-complete-page .thanks .visual{width:82%!important;margin:42px auto 0!important}
+    #blueman-complete-page .thanks .bp-copy{padding-top:20px!important}
+    #blueman-complete-page .thanks .bp-copy p:first-child{font-size:17px!important;line-height:1.6!important}
+    #blueman-complete-page .identity .top{gap:38px!important}
+    #blueman-complete-page .identity .shift-box{padding:25px 22px!important}
+    #blueman-complete-page .identity .top>div:last-child>.bp-art{width:82%!important;margin:14px auto 0!important}
+    #blueman-complete-page .identity .community-stat strong{font-size:58px!important}
+    #blueman-complete-page .identity .nft-story{margin-top:66px!important}
+    #blueman-complete-page .identity .nft-row{
+      display:grid!important;
+      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+      align-items:center!important;
+      gap:8px!important;
+      min-height:185px!important;
+      margin:30px 0 48px!important;
+      padding:8px 4px!important;
+      overflow:visible!important;
+    }
+    #blueman-complete-page .identity .nft-card{
+      width:100%!important;
+      min-width:0!important;
+      margin:0!important;
+    }
+    #blueman-complete-page .identity .nft-card:first-child{transform:rotate(-5deg) translateY(9px)!important}
+    #blueman-complete-page .identity .nft-card:nth-child(2){transform:translateY(-5px)!important}
+    #blueman-complete-page .identity .nft-card:nth-child(3){width:100%!important;transform:rotate(5deg) translateY(9px)!important}
+    #blueman-complete-page .identity .nft-card:nth-child(n+4){display:none!important}
+    #blueman-complete-page .identity .numbers{gap:30px!important;margin-top:0!important;padding:54px 0 0!important}
+    #blueman-complete-page .identity .numbers:before{margin-bottom:20px!important;font-size:8px!important;line-height:1.55!important;letter-spacing:.17em!important}
+    #blueman-complete-page .identity .big-number{font-size:72px!important;line-height:.86!important}
+
+    #blueman-complete-page .premium-use-grid{gap:10px!important;margin-top:42px!important}
+    #blueman-complete-page .premium-use{min-height:0!important;padding:27px 23px!important}
+    #blueman-complete-page .premium-use h3{margin-top:38px!important;font-size:19px!important}
+    #blueman-complete-page .ip-question{margin:54px 0!important;padding:32px 0!important}
+    #blueman-complete-page .ip-question blockquote{font-size:clamp(25px,7vw,33px)!important}
+    #blueman-complete-page .ip-editorial{padding:12px 21px 35px!important}
+
+    #blueman-complete-page .story-head{gap:32px!important;margin-bottom:55px!important}
+    #blueman-complete-page .story-head>div:last-child{padding-left:22px!important}
+    #blueman-complete-page .story-gallery{margin-bottom:60px!important}
+    #blueman-complete-page .story-roadmap{margin-top:54px!important}
+
+    #blueman-complete-page .purpose-six{padding:0!important}
+    #blueman-complete-page .purpose-six-head{margin-bottom:46px!important}
+    #blueman-complete-page .purpose-six .purpose-list{gap:10px!important}
+    #blueman-complete-page .purpose-six .purpose-list+.purpose-list{margin-top:10px!important}
+    #blueman-complete-page .purpose-six .purpose-item summary{padding:23px 20px!important}
+    #blueman-complete-page .purpose-six .purpose-name{font-size:21px!important;line-height:1.18!important}
+    #blueman-complete-page .purpose-six .purpose-body{padding:0 20px 28px!important}
+    #blueman-complete-page .purpose-six .purpose-art{width:88%!important;margin:48px auto 54px!important}
+    #blueman-complete-page .purpose-six .purpose-closing{margin-top:48px!important}
+
+    #blueman-complete-page .final-grid{gap:38px!important}
+    #blueman-complete-page .final .bp-copy{margin-top:30px!important}
+    #blueman-complete-page .final-equation{margin:26px 0!important;padding:18px 19px!important;font-size:20px!important}
+    #blueman-complete-page .final-matters{margin-top:28px!important;font-size:25px!important}
+    #blueman-complete-page .final-grid .bp-art{width:82%!important;margin:0 auto!important}
+    #blueman-complete-page .final-button{margin-top:28px!important;padding:15px 22px!important;font-size:12px!important}
+
+    /* Footer stays compact and legible on one narrow column. */
+    #blueman-complete-page .bp-foot{margin-top:64px!important;padding:26px 0 4px!important;gap:22px!important}
+    #blueman-complete-page .bp-foot-left,
+    #blueman-complete-page .bp-foot-right{width:100%!important;justify-content:flex-start!important;gap:14px!important}
+    #blueman-complete-page .bp-foot-right{flex-wrap:wrap!important}
+    #blueman-complete-page .bp-foot .bp-created-copy{gap:7px!important}
+    #blueman-complete-page .bp-foot .bp-signature-image{width:103px!important;height:40px!important;flex-basis:103px!important}
+    #blueman-complete-page .bp-foot .bp-signature-image img{width:103px!important;height:40px!important}
+    #blueman-complete-page .bp-established{font-size:8px!important}
+    #blueman-complete-page .bp-follow-label{font-size:8px!important}
+  }
+  @media(max-width:370px){
+    #blueman-complete-page .bp-inner{padding-left:18px!important;padding-right:18px!important}
+    #blueman-exact-hero .be-copy{padding-left:18px!important;padding-right:18px!important}
+    #blueman-exact-hero h1{font-size:45px!important}
+    #blueman-exact-hero .be-actions a{padding:0 15px!important}
+  }
+</style>
+<style id="purpose-art-size-final">
+  #blueman-complete-page .purpose-six .purpose-art{
+    width:min(520px,42vw)!important;
+    margin:64px auto 72px!important;
+  }
+  @media(max-width:1024px){
+    #blueman-complete-page .purpose-six .purpose-art{
+      width:min(460px,55vw)!important;
+    }
+  }
+  @media(max-width:760px){
+    #blueman-complete-page .purpose-six .purpose-art{
+      width:68%!important;
+      max-width:310px!important;
+      margin:42px auto 48px!important;
+    }
+  }
+</style>
+<style id="signature-transparent-final">
+  #blueman-complete-page .bp-foot .bp-signature-image{
+    background-image:url("data:image/png;base64,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")!important;
+    background-repeat:no-repeat!important;
+    background-position:center!important;
+    background-size:contain!important;
+  }
+  #blueman-complete-page .bp-foot .bp-signature-image img{
+    opacity:0!important;
+  }
+</style>
+<style id="story-gallery-size-final">
+  #blueman-complete-page .story-gallery{
+    grid-template-columns:repeat(2,340px)!important;
+    justify-content:center!important;
+    align-items:center!important;
+    gap:52px!important;
+    width:100%!important;
+    max-width:820px!important;
+    margin:12px auto 82px!important;
+    padding:0 22px!important;
+    box-sizing:border-box!important;
+  }
+  #blueman-complete-page .story-print,
+  #blueman-complete-page .story-print:last-child{
+    width:340px!important;
+    height:340px!important;
+    max-width:100%!important;
+    margin:0!important;
+  }
+  #blueman-complete-page .story-print:last-child{
+    transform:rotate(3deg) translateY(18px)!important;
+  }
+  #blueman-complete-page .story-print img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  @media(max-width:800px){
+    #blueman-complete-page .story-gallery{
+      grid-template-columns:1fr!important;
+      gap:30px!important;
+      max-width:330px!important;
+      margin:4px auto 60px!important;
+      padding:0!important;
+    }
+    #blueman-complete-page .story-print,
+    #blueman-complete-page .story-print:last-child{
+      width:min(72vw,280px)!important;
+      height:min(72vw,280px)!important;
+      margin:0 auto!important;
+    }
+    #blueman-complete-page .story-print:last-child{
+      transform:rotate(3deg) translateY(0)!important;
+    }
+  }
+</style>
+<style id="responsive-device-coverage-final">
+  /* Small laptops and compact desktop windows. */
+  @media(min-width:1025px) and (max-width:1280px){
+    #blueman-complete-page .bp-inner{
+      width:100%!important;
+      max-width:1160px!important;
+      box-sizing:border-box!important;
+      padding-left:48px!important;
+      padding-right:48px!important;
+    }
+    #blueman-complete-page .bp-grid,
+    #blueman-complete-page .identity .top,
+    #blueman-complete-page .ip-head,
+    #blueman-complete-page .ip-bottom,
+    #blueman-complete-page .story-head,
+    #blueman-complete-page .final-grid{gap:6%!important}
+    #blueman-complete-page .bp-title,
+    #blueman-complete-page .identity .bp-title,
+    #blueman-complete-page .ip .bp-title,
+    #blueman-complete-page .story .bp-title,
+    #blueman-complete-page .purpose-six-head .bp-title{
+      font-size:clamp(48px,5.4vw,69px)!important;
+    }
+    #blueman-complete-page .final .bp-title{font-size:clamp(52px,6vw,77px)!important}
+    #blueman-complete-page .identity .top>div:last-child>.bp-art,
+    #blueman-complete-page .ip-bottom .bp-art,
+    #blueman-complete-page .final-grid .bp-art{max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
+    #blueman-complete-page .premium-use-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+    #blueman-complete-page .premium-use{min-height:220px!important}
+    #blueman-complete-page .nft-row{max-width:100%!important;overflow:hidden!important}
+    #blueman-complete-page .nft-card{max-width:230px!important}
+    #blueman-exact-hero .be-copy{width:47%!important}
+    #blueman-exact-hero .be-art{left:48%!important}
+    #blueman-exact-hero h1{font-size:clamp(52px,6.4vw,76px)!important}
+  }
+
+  /* Tablets: content stacks before it can become cramped or overflow. */
+  @media(min-width:761px) and (max-width:1024px){
+    #blueman-complete-page{overflow:hidden!important}
+    #blueman-complete-page .bp-inner{
+      width:100%!important;
+      max-width:none!important;
+      box-sizing:border-box!important;
+      padding:96px 46px!important;
+    }
+    #blueman-complete-page .bp-grid,
+    #blueman-complete-page .thanks .bp-inner,
+    #blueman-complete-page .identity .top,
+    #blueman-complete-page .identity .numbers,
+    #blueman-complete-page .ip-head,
+    #blueman-complete-page .ip-bottom,
+    #blueman-complete-page .story-head,
+    #blueman-complete-page .final-grid{
+      grid-template-columns:1fr!important;
+      gap:46px!important;
+    }
+    #blueman-complete-page .bp-title,
+    #blueman-complete-page .identity .bp-title,
+    #blueman-complete-page .ip .bp-title,
+    #blueman-complete-page .story .bp-title,
+    #blueman-complete-page .purpose-six-head .bp-title{
+      max-width:720px!important;
+      font-size:clamp(48px,7.3vw,66px)!important;
+      line-height:.94!important;
+    }
+    #blueman-complete-page .final .bp-title{font-size:clamp(52px,8vw,72px)!important}
+    #blueman-complete-page .bp-copy,
+    #blueman-complete-page .ip-lead,
+    #blueman-complete-page .purpose-copy,
+    #blueman-complete-page .final .bp-copy{max-width:720px!important}
+    #blueman-complete-page .identity .top>div:first-child{position:static!important}
+    #blueman-complete-page .identity .top>div:last-child>.bp-art,
+    #blueman-complete-page .thanks .visual,
+    #blueman-complete-page .ip-bottom .bp-art,
+    #blueman-complete-page .final-grid .bp-art{
+      width:min(58%,500px)!important;
+      margin:0 auto!important;
+    }
+    #blueman-complete-page .premium-use-grid,
+    #blueman-complete-page .purpose-six .purpose-list{
+      grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    }
+    #blueman-complete-page .premium-use{min-height:0!important}
+    #blueman-complete-page .ip-question{grid-template-columns:1fr!important;gap:26px!important}
+    #blueman-complete-page .ip-question .build{text-align:left!important}
+    #blueman-complete-page .question-arrow{transform:rotate(90deg)!important}
+    #blueman-complete-page .story-copy,
+    #blueman-complete-page .purpose-copy{columns:1!important}
+    #blueman-complete-page .identity .nft-row{
+      display:grid!important;
+      grid-template-columns:repeat(3,minmax(0,1fr))!important;
+      gap:18px!important;
+      min-height:260px!important;
+      max-width:720px!important;
+      margin:48px auto 70px!important;
+      padding:10px!important;
+      overflow:visible!important;
+    }
+    #blueman-complete-page .identity .nft-card{
+      width:100%!important;
+      min-width:0!important;
+      max-width:220px!important;
+      margin:0!important;
+    }
+    #blueman-complete-page .identity .nft-card:nth-child(n+4){display:none!important}
+    #blueman-complete-page .identity .nft-card:first-child{transform:rotate(-5deg) translateY(15px)!important}
+    #blueman-complete-page .identity .nft-card:nth-child(2){width:100%!important;transform:translateY(-10px)!important}
+    #blueman-complete-page .identity .nft-card:nth-child(3){width:100%!important;transform:rotate(5deg) translateY(15px)!important}
+    #blueman-complete-page .bp-foot{flex-direction:column!important;align-items:flex-start!important;gap:24px!important}
+    #blueman-complete-page .bp-foot-left,
+    #blueman-complete-page .bp-foot-right{width:100%!important;justify-content:flex-start!important;flex-wrap:wrap!important}
+
+    #blueman-exact-hero{
+      aspect-ratio:auto!important;
+      min-height:0!important;
+      padding-bottom:40px!important;
+    }
+    #blueman-exact-hero .be-nav{left:46px!important;right:46px!important;top:34px!important}
+    #blueman-exact-hero .be-corner{display:none!important}
+    #blueman-exact-hero .be-copy{
+      position:relative!important;
+      left:auto!important;
+      top:auto!important;
+      width:auto!important;
+      max-width:720px!important;
+      padding:126px 46px 0!important;
+    }
+    #blueman-exact-hero h1{font-size:clamp(62px,9vw,82px)!important}
+    #blueman-exact-hero .be-sub{font-size:18px!important}
+    #blueman-exact-hero .be-list li{font-size:14px!important;line-height:1.45!important}
+    #blueman-exact-hero .be-art{
+      position:relative!important;
+      left:auto!important;
+      right:auto!important;
+      top:auto!important;
+      bottom:auto!important;
+      width:auto!important;
+      height:480px!important;
+      margin:30px 36px 0!important;
+      background-size:auto 100%!important;
+      background-position:center bottom!important;
+    }
+    #blueman-exact-hero .be-foot{display:none!important}
+  }
+
+  /* Landscape phones and unusually short viewports. */
+  @media(max-width:900px) and (orientation:landscape){
+    #blueman-exact-hero .be-copy{padding-top:88px!important}
+    #blueman-exact-hero .be-art{height:270px!important}
+    #blueman-complete-page .bp-inner{padding-top:68px!important;padding-bottom:68px!important}
+  }
+
+  /* Every media element must remain inside its available column. */
+  @media(max-width:1280px){
+    #blueman-complete-page img,
+    #blueman-complete-page svg,
+    #blueman-complete-page canvas{max-width:100%}
+    #blueman-complete-page .bp-art,
+    #blueman-complete-page .story-print,
+    #blueman-complete-page .purpose-art{box-sizing:border-box!important}
+  }
+</style>
 </body>
 </html>
